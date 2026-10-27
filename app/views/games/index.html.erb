@@ -1,0 +1,20 @@
+<% content_for :title, "Your games" %>
+<section class="hero">
+  <p class="eyebrow">YOUR PERSONAL GAME LIBRARY</p>
+  <h1>Great games.<br><span>All in one place.</span></h1>
+  <p>Keep your collection close. Add a game, explore its details, and make the library your own.</p>
+  <%= link_to "+ Add a game", new_game_path, class: "button" %>
+</section>
+<div class="section-heading"><h2>Your collection</h2><span><%= pluralize(@games.size, "game") %></span></div>
+<% if @games.empty? %>
+  <section class="empty-state"><h2>Your next adventure starts here.</h2><p>Add your first game to start building your collection.</p><%= link_to "Add your first game", new_game_path, class: "button" %></section>
+<% else %>
+  <div class="game-grid">
+    <% @games.each do |game| %>
+      <article class="game-card">
+        <div class="game-banner"><span class="eyebrow"><%= game.genre %></span><h3><%= link_to game.title, game %></h3><span><%= game.release_year %></span></div>
+        <div class="card-actions"><%= link_to "View game →", game %><%= link_to "Edit", edit_game_path(game) %></div>
+      </article>
+    <% end %>
+  </div>
+<% end %>

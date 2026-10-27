@@ -1,0 +1,3 @@
+<% content_for :title, "Add game" %>
+<%= link_to "← Your collection", games_path, class: "back-link" %>
+<section class="editor"><p class="eyebrow">GROW YOUR COLLECTION</p><h1>Add a game</h1><p class="muted">A few details for your next great adventure.</p><%= render "form", game: @game %></section>

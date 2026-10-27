@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Your games" %> · GameLibrary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="/stylesheets/application.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header><nav class="container" aria-label="Main navigation">
+      <%= link_to root_path, class: "brand" do %><span class="brand-mark" aria-hidden="true">G</span> GameLibrary<% end %>
+      <%= link_to "Your games", games_path %>
+      <%= link_to "+ Add game", new_game_path, class: "button small" %>
+    </nav></header>
+    <main id="main" class="container">
+      <% if notice %><p class="notice" role="status"><%= notice %></p><% end %>
+      <%= yield %>
+    </main>
+    <footer class="container">GameLibrary <span>A small home for the games you love.</span></footer>
+  </body>
+</html>

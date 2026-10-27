@@ -1,0 +1,6 @@
+<% content_for :title, @game.title %>
+<%= link_to "← Your collection", games_path, class: "back-link" %>
+<article class="editor detail"><p class="eyebrow">IN YOUR COLLECTION</p><h1><%= @game.title %></h1>
+  <dl><div><dt>Genre</dt><dd><%= @game.genre %></dd></div><div><dt>Release year</dt><dd><%= @game.release_year %></dd></div></dl>
+  <div class="actions"><%= link_to "Edit game", edit_game_path(@game), class: "button" %><%= link_to "Delete game", delete_game_path(@game), class: "danger-link" %></div>
+</article>

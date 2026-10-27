@@ -1,0 +1,5 @@
+<% content_for :title, "Delete #{@game.title}" %>
+<%= link_to "← Game details", @game, class: "back-link" %>
+<section class="editor"><p class="eyebrow">REMOVE FROM COLLECTION</p><h1>Delete game?</h1><p>Remove <strong><%= @game.title %></strong> from your library? This cannot be undone.</p>
+  <div class="actions"><%= button_to "Yes, delete game", game_path(@game), method: :delete, class: "button danger" %><%= link_to "Keep game", @game %></div>
+</section>

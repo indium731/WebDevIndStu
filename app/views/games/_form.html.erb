@@ -1,0 +1,11 @@
+<%= form_with model: game do |form| %>
+  <% if game.errors.any? %>
+    <div class="errors" role="alert"><h2>Please check your game</h2><ul><% game.errors.full_messages.each do |message| %><li><%= message %></li><% end %></ul></div>
+  <% end %>
+  <div class="field"><%= form.label :title %><%= form.text_field :title, required: true, maxlength: 120, autofocus: true %></div>
+  <div class="field"><%= form.label :genre %><%= form.text_field :genre, required: true, maxlength: 40, placeholder: "e.g. Adventure", list: "genres" %>
+    <datalist id="genres"><% %w[Action Adventure RPG Simulation Strategy Sports Puzzle].each do |genre| %><option value="<%= genre %>"></option><% end %></datalist>
+  </div>
+  <div class="field"><%= form.label :release_year %><%= form.number_field :release_year, required: true, min: 1970, max: 2100, step: 1, aria: { describedby: "year-hint" } %><small id="year-hint">Enter a year between 1970 and 2100.</small></div>
+  <div class="actions"><%= form.submit game.persisted? ? "Save changes" : "Add game", class: "button" %><%= link_to "Cancel", game.persisted? ? game_path(game) : games_path %></div>
+<% end %>
