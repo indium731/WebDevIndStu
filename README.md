@@ -1,6 +1,6 @@
-# GameLibrary ? Rails CRUD prototype
+# GameLibrary - Rails CRUD prototype
 
-A minimal standalone Ruby on Rails implementation of the Game entity from `../WebDevLab2`. The source project is an ASP.NET game library and review application. This prototype focuses on one entity as required by the assignment.
+A minimal standalone Ruby on Rails implementation of the Game entity from `Laboration 2`. The source project is an ASP.NET game library and review application. This prototype focuses on one entity as required by the assignment.
 
 ## Features
 
